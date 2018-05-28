@@ -44,7 +44,7 @@ podTemplate(label: 'mypod',
                 set +e
                 NAMESPACE=`cat /var/run/configs/registry-config/namespace`
                 REGISTRY=`cat /var/run/configs/registry-config/registry`
-                DEPLOYMENT=`kubectl --namespace=\${NAMESPACE} get deployments -l app=icp-nodejs-sample,micro=web-bff -o name`
+                DEPLOYMENT=`kubectl --namespace=\${NAMESPACE} get deployments -l app=icp-nodejs-sample-ibm-no-selector -o name`
 
                 kubectl --namespace=\${NAMESPACE} get \${DEPLOYMENT}
 
