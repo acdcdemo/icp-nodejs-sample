@@ -1,4 +1,4 @@
-podTemplate(label: 'mypod',
+podTemplate(label: 'mypod', cloud:'local cluster',
     volumes: [
         hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock'),
         secretVolume(secretName: 'registry-account', mountPath: '/var/run/secrets/registry-account'),
@@ -55,7 +55,7 @@ podTemplate(label: 'mypod',
                 fi
 
                 # Update Deployment
-                kubectl --namespace=\${NAMESPACE} set image \${DEPLOYMENT} web=\${REGISTRY}/\${NAMESPACE}/bluecompute-ce-web:${env.BUILD_NUMBER}
+                kubectl --namespace=\${NAMESPACE} set image \${DEPLOYMENT} web=\${REGISTRY}/\${NAMESPACE}/icp-nodejs-sample:${env.BUILD_NUMBER}
                 kubectl --namespace=\${NAMESPACE} rollout status \${DEPLOYMENT}
                 """
             }
