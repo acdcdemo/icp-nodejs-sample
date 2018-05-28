@@ -55,7 +55,7 @@ podTemplate(label: 'mypod',
                 fi
 
                 # Update Deployment
-                kubectl --namespace=\${NAMESPACE} set image \${DEPLOYMENT} web=\${REGISTRY}/\${NAMESPACE}/icp-nodejs-sample:${env.BUILD_NUMBER}
+                kubectl --namespace=\${NAMESPACE} set image \${DEPLOYMENT} ibm-nodejs-sample=\${REGISTRY}/\${NAMESPACE}/icp-nodejs-sample:${env.BUILD_NUMBER}
                 kubectl --namespace=\${NAMESPACE} rollout status \${DEPLOYMENT}
                 """
             }
