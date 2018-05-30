@@ -1,5 +1,7 @@
-# Image
-FROM ibmcom/ibmnode:8.3.0.0
+# Vulnerable Image
+#FROM ibmcom/ibmnode:8.3.0.0
+# Correct Image
+FROM ibmcom/ibmnode:8
 
 ENV NODE_ENV production
 ENV PORT 3000
